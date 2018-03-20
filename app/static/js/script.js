@@ -3,7 +3,3 @@ $(document).ready(function(){
 		$(this).toggleClass('open');
 	});
 });
-
-(function() {
-
-}).call(this);

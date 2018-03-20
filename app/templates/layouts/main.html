@@ -78,6 +78,16 @@
 
       {% block content %}{% endblock %}
 
+      <hr>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+      {% endif %}
+      {% endwith %}
     </main>
     <!-- Login modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -89,7 +99,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="/login" method="post">
+          <form action="/login" method="post" id="loginForm">
           <div class="modal-body">
               {{ form.hidden_tag() }}
               <p>
@@ -103,7 +113,7 @@
               <div style="text-align: center">{{ form.remember_me(class="custom-control-indicator") }} {{ form.remember_me.label }}</div>
           </div>
           <div class="modal-footer" style="justify-content: center">
-            {{ form.submit(class=" btn btn-action") }}
+            {{ form.submit(class=" btn btn-action", id="login-submit") }}
           </form>
           </div>
         </div>

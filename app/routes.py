@@ -23,8 +23,11 @@ def help():
 
 @app.route('/login', methods=['POST'])
 def login():
-    #A controller for the login post command
-    return redirect(url_for('/'), code=302)
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login request sent for user {}, remember_me={}'.format(form.username.data, form.remember_me.data))
+        return redirect('/index')
+    return redirect('/index')
 
 
 # Error handlers
