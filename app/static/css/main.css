@@ -1,0 +1,138 @@
+
+/**
+ * @file
+ * Main stylesheet file.
+ */
+
+
+/*****************************************************************************
+ * Main elements
+ ****************************************************************************/
+html {
+  overflow-y: scroll;
+}
+a {
+  cursor: pointer;
+}
+::selection {
+  background: #555;
+  color: #FFF;
+}
+::-moz-selection {
+  background: #555;
+  color: #FFF;
+}
+::-webkit-selection {
+  background: #555;
+  color: #FFF;
+}
+/* Main elements end */
+
+
+/*****************************************************************************
+ * Various other styles
+ ****************************************************************************/
+ button:focus {
+   outline:0;
+ }
+
+.nav-item {
+  padding-left: 13px;
+}
+
+.btn-action {
+  color: #fff;
+  background-color: #17a2b8;
+  background-image: none;
+  border-color: #17a2b8;
+  transition: all 1s;
+}
+
+.btn-action:hover {
+  color: #17a2b8;
+  background-color: transparent;
+  border-color: #17a2b8;
+  transform:scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform:scale(1.1,1.1);
+  transition: all 0.4s;
+}
+
+/* Nav Icon */
+
+#nav-icon {
+  width: 30px;
+  height: 23px;
+  position: relative;
+  margin: 10px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #17a2b8;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
+  top: 9px;
+}
+
+#nav-icon span:nth-child(4) {
+  top: 18px;
+}
+
+#nav-icon.open span:nth-child(1) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+  top: 9px;
+  width: 0%;
+  left: 50%;
+}
+
+/* Nav Icon End */
+
+/* Various other styles end */
