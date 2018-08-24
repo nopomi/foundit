@@ -7,3 +7,10 @@ class User(db.Model):
 
     def __repr__(self):
         return 'User: {}'.format(self.email)
+
+class School(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.column(db.String(128))
+    #need to add more info here about Schools and other classes
+    #Relationships also need to be specified here
+    #
